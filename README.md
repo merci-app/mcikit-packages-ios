@@ -1,12 +1,11 @@
 # mcikit-packages-ios
 
-Esse é um repositório de código aberto desenvolvido pelo time da Merci que disponibiliza algumas soluções que ajudarão desenvolvedores
-a acelerarem o seu processo de desenvolvimento.
+Esse é um repositório de código aberto, desenvolvido pelo time da Merci, que disponibiliza algumas soluções que ajudarão desenvolvedores a acelerarem o processo de desenvolvimento.
 
 ## Módulo OTPAuth
 
-Esse módulo diponibiliza a solução de geração de token (TOTP) a partir de uma url otp-auth. A seguir um exemplo de inicilização e acesso
-ao token gerado:
+Esse módulo diponibiliza a solução de geração de token (TOTP) a partir de uma url otp-auth. 
+A seguir um exemplo de inicilização e acesso ao token gerado:
 
 ```swift
 let otpAuth = try? OTPAuth("otpauth://totp/XPTO:FOO?issuer=XPTO&algorithm=SHA1&digits=6&period=30&secret=N4SYQORWRZ2TIML5")
@@ -36,7 +35,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(tokenTick(_:)),
 }
 ```
 
-Encerra o envio de notificações:
+Encerrar o envio de notificações:
 ```swift
 otpAuth?.stopNotification()
 ```
