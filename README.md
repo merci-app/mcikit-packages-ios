@@ -20,7 +20,7 @@ otpAuth?.remainingSeconds
 
 Também é possível receber os eventos com o token e tempo restante para expiração através de notificação:
 ```swift
-val otp = OTPAuth("otpauth://totp/XPTO:FOO?issuer=XPTO&algorithm=SHA1&digits=6&period=30&secret=N4SYQORWRZ2TIML5")
+let otp = OTPAuth("otpauth://totp/XPTO:FOO?issuer=XPTO&algorithm=SHA1&digits=6&period=30&secret=N4SYQORWRZ2TIML5")
 
 otpAuth?.startNotificattion()
 ```
