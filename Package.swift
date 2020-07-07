@@ -28,7 +28,7 @@ let package = Package(
             path: "OTPAuth/Tests"),
         .target(
             name: "OTPAuthUI",
-            dependencies: [],
+            dependencies: ["OTPAuth"],
             path: "OTPAuthUI/Sources"),
         .testTarget(
             name: "OTPAuthUITests",

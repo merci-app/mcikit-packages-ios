@@ -14,11 +14,19 @@ class OTPAuthImageView: UIImageView {
     @IBInspectable
     var color: UIColor = .black
     
-    func generateToken(vat: String, otpAuth: OTPAuth, value: String = "", color: UIColor = .black) {
-        NotificationCenter.default.post(name: Notification.Name.OTPAuthNotification.tokenTick, object: otpAuth)
-        guard let currentToken = otpAuth.currentToken else { return }
-        let amount = value.normalize()
-        let code = vat + currentToken + amount
+    private var otpAuth: OTPAuth?
+    private var vat: String?
+    private var value: String?
+    
+    private func generateQRCode() {
+        guard let currentToken = otpAuth?.currentToken,
+            let vat = vat,
+            let amount = value?.normalize()
+        else {
+            return
+        }
+        
+        let code = "\(vat)\(currentToken)\(amount)"
         
         var context: CIContext!
         
@@ -47,6 +55,43 @@ class OTPAuthImageView: UIImageView {
         else { return }
         
         self.image = UIImage(cgImage: cgImage)
+    }
+    
+    func generateToken(vat: String, otpAuth: OTPAuth, value: String = "", color: UIColor = .black) {
+        
+        self.vat = vat
+        self.otpAuth = otpAuth
+        self.value = value
+        
+        generateQRCode()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(tokenTick(_:)),
+            name: Notification.Name.OTPAuthNotification.tokenTick,
+            object: otpAuth
+        )
+        
+        otpAuth.startNotificattion()
+    }
+    
+    deinit {
+        otpAuth?.stopNotification()
+        NotificationCenter.default.removeObserver(
+            self,
+            name: Notification.Name.OTPAuthNotification.tokenTick,
+            object: otpAuth
+        )
+    }
+}
+
+// MARK: - Notification Center
+
+extension OTPAuthImageView {
+    @objc public func tokenTick(_ notification: Notification) {
+        DispatchQueue.main.async {
+            self.generateQRCode()
+        }
     }
 }
 

@@ -57,7 +57,7 @@ func generateToken(vat: String, otpAuth: OTPAuth, value: String = "", color: UIC
 ```
 Parâmetros:
 ```
-vat     : CPF / CNPJ
+vat     : CPF
 otpAuth : instancia do OTPAuth
 value   : (opcional) valor do QR code
 color   : (opcional) cor do QR code 
