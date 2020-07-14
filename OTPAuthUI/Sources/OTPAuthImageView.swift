@@ -1,5 +1,5 @@
 //
-//  QRCodeImageView.swift
+//  OTPAuthImageView.swift
 //  PayCodeVC
 //
 //  Created by Tiago Oliveira on 01/07/20.

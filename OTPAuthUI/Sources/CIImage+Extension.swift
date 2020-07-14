@@ -6,6 +6,7 @@
 //  Copyright © 2020 Conductor Solucoes. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 extension CIImage {
@@ -45,3 +46,4 @@ extension CIImage {
         return filter.outputImage!
     }
 }
+#endif
