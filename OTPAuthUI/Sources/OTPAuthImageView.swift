@@ -1,6 +1,6 @@
 //
 //  OTPAuthImageView.swift
-//  PayCodeVC
+// 
 //
 //  Created by Tiago Oliveira on 01/07/20.
 //  Copyright © 2020 Conductor Solucoes. All rights reserved.
