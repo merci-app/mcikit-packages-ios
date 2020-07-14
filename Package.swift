@@ -12,6 +12,9 @@ let package = Package(
         .library(
             name: "OTPAuth",
             targets: ["OTPAuth"]),
+        .library(
+            name: "OTPAuthUI",
+            targets: ["OTPAuthUI"]),
     ],
     dependencies: [],
     targets: [
@@ -23,5 +26,13 @@ let package = Package(
             name: "OTPAuthTests",
             dependencies: ["OTPAuth"],
             path: "OTPAuth/Tests"),
+        .target(
+            name: "OTPAuthUI",
+            dependencies: ["OTPAuth"],
+            path: "OTPAuthUI/Sources"),
+        .testTarget(
+            name: "OTPAuthUITests",
+            dependencies: ["OTPAuthUI"],
+            path: "OTPAuthUI/Tests"),
     ]
 )
