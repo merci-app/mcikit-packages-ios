@@ -1,3 +1,5 @@
+![Swift](https://github.com/merci-app/mcikit-packages-ios/workflows/Swift/badge.svg)
+
 # mcikit-packages-ios
 
 Esse é um repositório de código aberto, desenvolvido pelo time da Merci, que disponibiliza algumas soluções que ajudarão desenvolvedores a acelerarem o processo de desenvolvimento.
