@@ -1,4 +1,8 @@
 ![Swift](https://github.com/merci-app/mcikit-packages-ios/workflows/Swift/badge.svg)
+![XCode](https://img.shields.io/badge/XCode-11.6-green.svg) 
+![Language](https://img.shields.io/badge/Language-Swif5.2-green.svg)
+![Platform](https://img.shields.io/badge/Platform-iOS-green.svg) 
+[![MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 # mcikit-packages-ios
 
