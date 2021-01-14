@@ -65,6 +65,7 @@ public final class OTPAuth: Codable {
     
     private func retriveDateNow() -> Date {
         return Date().addingTimeInterval(0)
+        // Date(timeIntervalSince1970: .init(1579019940)) //
     }
     
     private func calculateExpirationDate(currentToken: String? = nil) throws {
@@ -173,7 +174,7 @@ private extension OTPAuth {
     }
     
     func validateDigits(_ digits: Int) throws {
-        let acceptableDigits = 4...8
+        let acceptableDigits = 3...8
         guard acceptableDigits.contains(digits) else {
             throw OTPAuthError.invalidDigits("digit must be 4...8")
         }
